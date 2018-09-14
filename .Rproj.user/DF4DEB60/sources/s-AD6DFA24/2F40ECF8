@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536881264200.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2F40ECF8",
+    "lastKnownWriteTime" : 1536890481,
+    "last_content_update" : 1536890481283,
+    "path" : "~/works/shiny/pwscup2018samplewebapp/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "cursorPosition" : "16,8",
+        "marks" : "<:12,0\n>:12,0",
+        "scrollLine" : "3",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,3 @@
+[submodule "pwscup2018sample"]
+	path = pwscup2018sample
+	url = https://github.com/gghatano/pwscup2018sample

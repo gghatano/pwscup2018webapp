@@ -1,0 +1,1 @@
+echo "checker-A.bash"
