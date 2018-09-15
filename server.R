@@ -1,26 +1,75 @@
 # library----
 library(shiny)
 library(shinythemes)
+library(dplyr)
 
 # server----
 shinyServer(
   function(input, output) { 
-    output$fileContents <- renderTable({
-      inFile <- input$file_input
-      
+    ## check A file
+    output$fileContents_A <- renderTable({
+      inFile <- input$file_input_A
       if (is.null(inFile))
         return(NULL)
       
-      output$verba_text <- renderText({
-        ## text <- inFile$datapath
-        text <- system("bash checker.bash", intern = TRUE)
+      output$verba_text_A <- renderText({
+        system("ls -l > ./res.txt")
+        lines = readLines("res.txt")
+        system("rm ./res.txt")
+        text = paste(lines, collapse = "\n")
+        print(text)
+        # text = inFile$datapath
       })
       
-      read.csv(inFile$datapath) %>% head %>% return
+      read.csv(inFile$datapath) %>% return
     })
     
-    output$verba_text <- renderText({
-      text <- "Check Result"
+    
+    ## F checker A
+    output$fileContents_F_A <- renderTable({
+      inFile_F_A <<- input$file_input_F_A
+      if (is.null(inFile_F_A))
+        return(NULL)
+      
+      output$verba_text_F <- renderText({
+        text = "次はFファイルをアップロード"
+        text %>% return
+      })
+      
+      read.csv(inFile_F_A$datapath) %>% return
+    })
+    
+    ## F checker F
+    output$fileContents_F_F <- renderTable({
+      inFile_F_F <<- input$file_input_F_F
+      if (is.null(inFile_F_F))
+        return(NULL)
+      
+      output$verba_text_F <- renderText({
+        # text = inFile_F_F$datapath
+        datapath_F_A = inFile_F_A$datapath
+        datapath_F_F = inFile_F_F$datapath
+        datapath_F_T = "todo"
+        
+        command = paste("bash ./command.sh", datapath_F_T, datapath_F_F, datapath_F_A, "&> ./res.txt", sep =" ")
+        system("")
+        system("ls -l > ./res.txt")
+        lines = readLines("res.txt")
+        system("rm ./res.txt")
+        text = paste(lines, collapse = "\n")
+        
+        text %>% return
+      })
+      
+      read.csv(inFile_F_F$datapath) %>% return
+    })
+    
+    #### default verba_text
+    output$verba_text_A <- renderText({
+      text <- "Aファイルをアップロードしてください"
+    })
+    output$verba_text_F <- renderText({
+      text <- "まずはAファイルをアップロードしてください"
     })
   }
 )

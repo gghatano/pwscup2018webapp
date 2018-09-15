@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+ pwscup2018samplewebapp:
+  image: pwscup2018samplewebapp:0.0
+  tty: true
+  container_name: pwscup2018samplewebapp
