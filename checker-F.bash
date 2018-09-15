@@ -7,5 +7,6 @@ pathToT=$1
 pathToA=$2
 pathToF=$3
 
-( cd ./pwscup2018sample/check-f1/; bash ./check-f1.sh $pathToT $pathToA $pathToF )
+## Execute
+cd ./pwscup2018sample/pwscup2018sample/check-f1/; bash ./check-f1.sh $pathToT $pathToA $pathToF &> /home/rstudio/pwscup2018webapp/res.txt
 

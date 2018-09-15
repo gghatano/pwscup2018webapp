@@ -15,11 +15,12 @@ shinyServer(
       output$verba_text_A <- renderText({
         system("ls -l > ./res.txt")
         lines = readLines("res.txt")
-        system("rm ./res.txt")
+        ## system("rm ./res.txt")
         text = paste(lines, collapse = "\n")
       })
       
-      read.csv(inFile_A$datapath) %>% return
+      read.csv(inFile_A$datapath, header = FALSE) %>% 
+        select(1,2) %>% head %>% return
     })
     
     
@@ -34,7 +35,8 @@ shinyServer(
         text %>% return
       })
       
-      read.csv(inFile_F_A$datapath) %>% return
+      read.csv(inFile_F_A$datapath, header=FALSE) %>% 
+        select(1,2) %>% head %>% return
     })
     
     ## F checker F
@@ -47,20 +49,25 @@ shinyServer(
         # text = inFile_F_F$datapath
         datapath_F_A = inFile_F_A$datapath
         datapath_F_F = inFile_F_F$datapath
-        datapath_F_T = "./pwscup2018sample/drill/data/T.csv"
+        datapath_F_T = "/home/rstudio/pwscup2018webapp/pwscup2018sample/pwscup2018sample/drill/data/T.csv"
         
-        command = paste("bash ./checker-F.sh", datapath_F_T, datapath_F_F, datapath_F_A, "&> ./res.txt", sep =" ")
+        command = paste("/bin/bash ./checker-F.bash", 
+                        datapath_F_T, datapath_F_F, datapath_F_A, 
+                        sep =" ")
+        ## execute
+        print(command)
+        system(command)
         
         ## cleanup result
-        system("ls -l > ./res.txt")
-        lines = readLines("res.txt")
+        lines = readLines("./res.txt")
         system("rm ./res.txt")
         text = paste(lines, collapse = "\n")
         
         text %>% return
       })
       
-      read.csv(inFile_F_F$datapath) %>% return
+      read.csv(inFile_F_F$datapath, header = FALSE) %>% 
+        select(1,2) %>% head %>% return
     })
     
     #### default verba_text
