@@ -8,8 +8,8 @@ shinyServer(
   function(input, output) { 
     ## check A file
     output$fileContents_A <- renderTable({
-      inFile <- input$file_input_A
-      if (is.null(inFile))
+      inFile_A<- input$file_input_A
+      if (is.null(inFile_A))
         return(NULL)
       
       output$verba_text_A <- renderText({
@@ -17,11 +17,9 @@ shinyServer(
         lines = readLines("res.txt")
         system("rm ./res.txt")
         text = paste(lines, collapse = "\n")
-        print(text)
-        # text = inFile$datapath
       })
       
-      read.csv(inFile$datapath) %>% return
+      read.csv(inFile_A$datapath) %>% return
     })
     
     
