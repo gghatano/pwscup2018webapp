@@ -1,5 +1,0 @@
-check-f1.rb:20:in `error': Line 0: invalid format (RuntimeError)
-	from check-f1.rb:36:in `block in <main>'
-	from check-f1.rb:34:in `each'
-	from check-f1.rb:34:in `each_with_index'
-	from check-f1.rb:34:in `<main>'

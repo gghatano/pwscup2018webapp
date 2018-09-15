@@ -13,14 +13,29 @@ shinyServer(
         return(NULL)
       
       output$verba_text_A <- renderText({
-        system("ls -l > ./res.txt")
-        lines = readLines("res.txt")
-        ## system("rm ./res.txt")
+        
+        ## data path
+        datapath_A = inFile_A$datapath
+        datapath_T = "/home/rstudio/pwscup2018webapp/pwscup2018sample/pwscup2018sample/drill/data/T.csv"
+        
+        ## execute 
+        command = paste("/bin/bash ./checker-A.bash", 
+                        datapath_T, datapath_A, 
+                        sep =" ")
+        system(command)
+        lines = readLines("./res.txt")
+        system("rm ./res.txt")
         text = paste(lines, collapse = "\n")
+        
+        if( text == "" ){
+          text = "OK!"
+        }
+        
+        text %>% return
       })
       
       read.csv(inFile_A$datapath, header = FALSE) %>% 
-        select(1,2) %>% head %>% return
+        head %>% return
     })
     
     
@@ -55,13 +70,12 @@ shinyServer(
                         datapath_F_T, datapath_F_A, datapath_F_F, 
                         sep =" ")
         ## execute
-        ## print(command)
         system(command)
         
         ## cleanup result
         lines = readLines("./res.txt")
         # system("pwd")
-        ## system("rm ./res.txt")
+        system("rm ./res.txt")
         text = paste(lines, collapse = "\n")
         
         if( text == "" ){
@@ -71,6 +85,7 @@ shinyServer(
         text %>% return
       })
       
+      ## display dataset 
       read.csv(inFile_F_F$datapath, header = FALSE) %>% 
         select(1,2) %>% head %>% return
     })
