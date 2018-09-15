@@ -34,7 +34,7 @@ shinyUI(navbarPage(
       column(
         3,
         h4("Aファイル"),
-        fileInput("file_input_F_A", label = NULL, buttonLabel = "Select F file"),
+        fileInput("file_input_F_A", label = NULL, buttonLabel = "Select A file"),
         tableOutput("fileContents_F_A")
       ),
       column(
