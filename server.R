@@ -49,10 +49,11 @@ shinyServer(
         # text = inFile_F_F$datapath
         datapath_F_A = inFile_F_A$datapath
         datapath_F_F = inFile_F_F$datapath
-        datapath_F_T = "todo"
+        datapath_F_T = "./pwscup2018sample/drill/data/T.csv"
         
-        command = paste("bash ./command.sh", datapath_F_T, datapath_F_F, datapath_F_A, "&> ./res.txt", sep =" ")
-        system("")
+        command = paste("bash ./checker-F.sh", datapath_F_T, datapath_F_F, datapath_F_A, "&> ./res.txt", sep =" ")
+        
+        ## cleanup result
         system("ls -l > ./res.txt")
         lines = readLines("res.txt")
         system("rm ./res.txt")
