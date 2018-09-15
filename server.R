@@ -16,7 +16,7 @@ shinyServer(
         
         ## data path
         datapath_A = inFile_A$datapath
-        datapath_T = "/home/rstudio/pwscup2018webapp/pwscup2018sample/pwscup2018sample/drill/data/T.csv"
+        datapath_T = "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/data/T.csv"
         
         ## execute 
         command = paste("/bin/bash ./checker-A.bash", 
@@ -24,7 +24,6 @@ shinyServer(
                         sep =" ")
         system(command)
         lines = readLines("./res.txt")
-        system("rm ./res.txt")
         text = paste(lines, collapse = "\n")
         
         if( text == "" ){
@@ -64,7 +63,7 @@ shinyServer(
         
         datapath_F_A = inFile_F_A$datapath
         datapath_F_F = inFile_F_F$datapath
-        datapath_F_T = "/home/rstudio/pwscup2018webapp/pwscup2018sample/pwscup2018sample/drill/data/T.csv"
+        datapath_F_T = "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/data/T.csv"
         
         command = paste("/bin/bash ./checker-F.bash", 
                         datapath_F_T, datapath_F_A, datapath_F_F, 
@@ -75,7 +74,6 @@ shinyServer(
         ## cleanup result
         lines = readLines("./res.txt")
         # system("pwd")
-        system("rm ./res.txt")
         text = paste(lines, collapse = "\n")
         
         if( text == "" ){
