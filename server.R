@@ -46,22 +46,27 @@ shinyServer(
         return(NULL)
       
       output$verba_text_F <- renderText({
-        # text = inFile_F_F$datapath
+        
         datapath_F_A = inFile_F_A$datapath
         datapath_F_F = inFile_F_F$datapath
         datapath_F_T = "/home/rstudio/pwscup2018webapp/pwscup2018sample/pwscup2018sample/drill/data/T.csv"
         
         command = paste("/bin/bash ./checker-F.bash", 
-                        datapath_F_T, datapath_F_F, datapath_F_A, 
+                        datapath_F_T, datapath_F_A, datapath_F_F, 
                         sep =" ")
         ## execute
-        print(command)
+        ## print(command)
         system(command)
         
         ## cleanup result
         lines = readLines("./res.txt")
-        system("rm ./res.txt")
+        # system("pwd")
+        ## system("rm ./res.txt")
         text = paste(lines, collapse = "\n")
+        
+        if( text == "" ){
+          text = "OK!"
+        }
         
         text %>% return
       })
