@@ -1,4 +1,4 @@
-PWSCUP2018書式チェッカー(Web版) Ver 1.2
+PWSCUP2018書式チェッカー(Web版) Ver 1.4
 ===
 
 ## 注意
@@ -12,22 +12,25 @@ PWSCUP2018書式チェッカー(Web版) Ver 1.2
 ## 使い方
 ### about
 - このチェッカーの説明
- - 要望・bug報告などは、[Twitter](https://mobile.twitter.com/PWScup_Admin)宛にお願いします
+ - 要望・バグ報告などは、[Twitter](https://mobile.twitter.com/PWScup_Admin)宛にお願いします
 
-### [作成中] Utility
+### Utility
 - 有用性を評価します
  - 匿名加工データAをアップロードしてください 
+ - 先にAの書式チェックをするといいと思います
  
 ### A checker
-- 匿名加工後データAのフォーマット確認をします
+- 匿名加工後データAの書式確認をします
  - 加工後データAをアップロードしてください
 
 ### F checker
-- 推定対応表Fのフォーマット確認をします
+- 推定対応表Fの書式確認をします
  - 推定対象データAと推定対応表Fをアップロードしてください
 
 
 ## 更新情報
+- Ver 1.4 
+ - UIの修正
 - Ver 1.2 
  - UIの修正
 - Ver 1.1

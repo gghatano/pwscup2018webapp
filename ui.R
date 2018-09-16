@@ -13,14 +13,18 @@ shinyUI(
         includeMarkdown("about.md")
       )
     )),
-  tabPanel("[作成中]Utility",
+  tabPanel("Utility",
     titlePanel("Utility"),
     fluidRow(
       column(
-        3,
+        6,
         h4("Aファイル"),
         fileInput("file_input_U", label = NULL, buttonLabel = "Select A file"),
         tableOutput("fileContents_U")
+      ),
+      column(6,
+        h4("評価結果"),
+        verbatimTextOutput("verba_text_U")
       )
     )),
   tabPanel("A checker",
@@ -28,12 +32,11 @@ shinyUI(
       titlePanel("A Format Checker"),
       fluidRow(
         column(
-        3,
+        6,
         h4("Aファイル"),
         fileInput("file_input_A", label = NULL, buttonLabel = "Select A file"),
         tableOutput("fileContents_A")
       ),
-      column(3),
       column(6,
         h4("フォーマット確認結果を表示"),
         verbatimTextOutput("verba_text_A")

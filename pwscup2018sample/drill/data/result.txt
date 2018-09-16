@@ -1,0 +1,12 @@
+[Utility]
+1.528565838387791e-06
+
+[Security]
+==> data/out/security/hamada_from-csv_hamada_re-1_hamada_sec-test.S <==
+0
+
+==> data/out/security/hamada_from-csv_hamada_re-uniq_hamada_sec-test.S <==
+1
+
+==> data/out/security/hamada_from-csv_watanabe_re-item_hamada_sec-test.S <==
+1

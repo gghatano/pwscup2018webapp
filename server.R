@@ -6,6 +6,37 @@ library(dplyr)
 # server----
 shinyServer(
   function(input, output) { 
+    ## U
+    output$fileContents_U <- renderTable({
+      inFile_U<- input$file_input_U
+      if (is.null(inFile_U))
+        return(NULL)
+      
+      output$verba_text_U <- renderText({
+        
+        ## data path
+        datapath_U_A = inFile_U$datapath
+        datapath_T = "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/data/T.csv"
+        
+        ## execute 
+        command = paste("/bin/bash ./utility.bash", 
+                        datapath_T, datapath_U_A, 
+                        sep =" ")
+        system(command)
+        lines = readLines("./res.txt")
+        text = paste(lines, collapse = "\n")
+        
+        if( text == "" ){
+          text = "OK!"
+        }
+        
+        text %>% return
+      })
+      
+      read.csv(inFile_U$datapath, header = FALSE) %>% 
+        head %>% return
+    })
+    
     ## check A file
     output$fileContents_A <- renderTable({
       inFile_A<- input$file_input_A
@@ -94,6 +125,9 @@ shinyServer(
     })
     output$verba_text_F <- renderText({
       text <- "まずはAファイルをアップロードしてください"
+    })
+    output$verba_text_U <- renderText({
+      text <- "Aファイルをアップロードしてください"
     })
   }
 )
