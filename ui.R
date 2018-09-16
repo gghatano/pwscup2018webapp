@@ -3,12 +3,25 @@ library(shiny)
 library(shinythemes)
 
 # ui----
-shinyUI(navbarPage(
-  "checker",
+shinyUI(
+  navbarPage(
+  "PWSCUP2018",
+  theme = shinytheme("cosmo"),
   tabPanel("About",
     fluidRow(
       column(12,
-        includeMarkdown("about.md"))
+        includeMarkdown("about.md")
+      )
+    )),
+  tabPanel("[作成中]Utility",
+    titlePanel("Utility"),
+    fluidRow(
+      column(
+        3,
+        h4("Aファイル"),
+        fileInput("file_input_U", label = NULL, buttonLabel = "Select A file"),
+        tableOutput("fileContents_U")
+      )
     )),
   tabPanel("A checker",
     fluidPage(
