@@ -6,15 +6,8 @@ PWSCUP2018書式チェッカー(Web版) Ver 1.2
  - 参考として、ご利用ください
 - 予選のトランザクションを利用しています
  - 本戦でデータの変更があれば、本チェッカーも更新します
- - 最新の情報は、[Twitter](https://mobile.twitter.com/PWScup_Admin)か(コンテストページ)[https://www.iwsec.org/pws/2018/cup18.html]でご確認ください
+ - 最新の情報は、[Twitter](https://mobile.twitter.com/PWScup_Admin)か[コンテストページ](https://www.iwsec.org/pws/2018/cup18.html)でご確認ください
 
-## 更新情報
-- Ver 1.2 
- - UIの修正
-- Ver 1.1
- - UIの修正
-- Ver 1.0 
- - 公開
  
 ## 使い方
 ### about
@@ -32,3 +25,12 @@ PWSCUP2018書式チェッカー(Web版) Ver 1.2
 ### F checker
 - 推定対応表Fのフォーマット確認をします
  - 推定対象データAと推定対応表Fをアップロードしてください
+
+
+## 更新情報
+- Ver 1.2 
+ - UIの修正
+- Ver 1.1
+ - UIの修正
+- Ver 1.0 
+ - 公開

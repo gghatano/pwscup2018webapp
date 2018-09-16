@@ -3,8 +3,10 @@ library(shiny)
 library(shinythemes)
 
 # ui----
-shinyUI(navbarPage(
+shinyUI(
+  navbarPage(
   "PWSCUP2018",
+  theme = shinytheme("cosmo"),
   tabPanel("About",
     fluidRow(
       column(12,
