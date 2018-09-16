@@ -4,7 +4,7 @@ library(shinythemes)
 
 # ui----
 shinyUI(navbarPage(
-  "checker",
+  "PWSCUP2018",
   tabPanel("About",
     fluidRow(
       column(12,
