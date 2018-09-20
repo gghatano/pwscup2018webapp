@@ -18,10 +18,9 @@ if [ "$pathToT" = "" ]; then
 fi
 
 ## Execute
-rm /srv/shiny-server/pwscup2018webapp/res.txt
-cp $1 /srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/data/A.csv
+# rm /srv/shiny-server/pwscup2018webapp/res.txt
+cp $2 /srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/data/A.csv
+head /srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/data/A.csv
 cd ./pwscup2018sample/drill/
-bash command.sh
-cp ./data/result.txt /srv/shiny-server/pwscup2018webapp/res.txt
-
-
+bash ./command.sh
+cp /srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/data/result.txt /srv/shiny-server/pwscup2018webapp/res.txt

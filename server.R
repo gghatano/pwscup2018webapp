@@ -19,11 +19,11 @@ shinyServer(
         datapath_T = "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/data/T.csv"
         
         ## execute 
-        command = paste("/bin/bash ./utility.bash", 
+        command = paste("/bin/bash -ex ./utility.bash", 
                         datapath_T, datapath_U_A, 
                         sep =" ")
         system(command)
-        lines = readLines("./res.txt")
+        lines = readLines("/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/data/result.txt")
         text = paste(lines, collapse = "\n")
         
         if( text == "" ){
