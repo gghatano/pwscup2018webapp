@@ -16,6 +16,7 @@ echo '[Utility]' > result.txt
 head data/out/utility/* >> result.txt
 echo '' >> result.txt
 echo '[Security]' >> result.txt
+head data/out/security/* >> result.txt
 mv result.txt data/
 
 ##

@@ -1,5 +1,5 @@
 [Utility]
-1.528565838387791e-06
+0.0
 
 [Security]
 ==> data/out/security/hamada_from-csv_hamada_re-1_hamada_sec-test.S <==
