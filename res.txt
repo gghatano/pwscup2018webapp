@@ -1,12 +1,17 @@
 [Utility]
-0.0
+==> data/out/utility/hamada_from-csv_hamada_ut-il.err <==
+b'Traceback (most recent call last):\n  File "ut-il.py", line 107, in <module>\n    il_date(t[1], a[1]), # 2\xe5\x88\x97\xe7\x9b\xae (\xe8\xb3\xbc\xe5\x85\xa5\xe6\x97\xa5)\nIndexError: list index out of range\nTraceback (most recent call last):\n  File "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/lib/hamada/all/tool-nsplit.py", line 17, in <module>\n    write_table(read_table(), fout, True)\n  File "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/lib/hamada/all/common.py", line 9, in read_table\n    n = int(fin.readline())\nValueError: invalid literal for int() with base 10: \'\'\n'
+==> data/out/utility/hamada_from-csv_hamada_ut-il.U <==
 
 [Security]
+==> data/out/security/hamada_from-csv_hamada_re-1_hamada_sec-test.err <==
+b'Traceback (most recent call last):\n  File "sec-test.py", line 48, in <module>\n    f = make_pid2oid(t, a) # F\n  File "sec-test.py", line 20, in make_pid2oid\n    ai = a[i] # A \xe3\x81\xae i \xe8\xa1\x8c\xe7\x9b\xae\nIndexError: list index out of range\nTraceback (most recent call last):\n  File "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/lib/hamada/all/tool-nsplit.py", line 17, in <module>\n    write_table(read_table(), fout, True)\n  File "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/lib/hamada/all/common.py", line 9, in read_table\n    n = int(fin.readline())\nValueError: invalid literal for int() with base 10: \'\'\n'
 ==> data/out/security/hamada_from-csv_hamada_re-1_hamada_sec-test.S <==
-0
 
+==> data/out/security/hamada_from-csv_hamada_re-uniq_hamada_sec-test.err <==
+b'Traceback (most recent call last):\n  File "sec-test.py", line 48, in <module>\n    f = make_pid2oid(t, a) # F\n  File "sec-test.py", line 20, in make_pid2oid\n    ai = a[i] # A \xe3\x81\xae i \xe8\xa1\x8c\xe7\x9b\xae\nIndexError: list index out of range\nTraceback (most recent call last):\n  File "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/lib/hamada/all/tool-nsplit.py", line 17, in <module>\n    write_table(read_table(), fout, True)\n  File "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/lib/hamada/all/common.py", line 9, in read_table\n    n = int(fin.readline())\nValueError: invalid literal for int() with base 10: \'\'\n'
 ==> data/out/security/hamada_from-csv_hamada_re-uniq_hamada_sec-test.S <==
-1
 
+==> data/out/security/hamada_from-csv_watanabe_re-item_hamada_sec-test.err <==
+b'Traceback (most recent call last):\n  File "sec-test.py", line 48, in <module>\n    f = make_pid2oid(t, a) # F\n  File "sec-test.py", line 20, in make_pid2oid\n    ai = a[i] # A \xe3\x81\xae i \xe8\xa1\x8c\xe7\x9b\xae\nIndexError: list index out of range\nTraceback (most recent call last):\n  File "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/lib/hamada/all/tool-nsplit.py", line 17, in <module>\n    write_table(read_table(), fout, True)\n  File "/srv/shiny-server/pwscup2018webapp/pwscup2018sample/drill/lib/hamada/all/common.py", line 9, in read_table\n    n = int(fin.readline())\nValueError: invalid literal for int() with base 10: \'\'\n'
 ==> data/out/security/hamada_from-csv_watanabe_re-item_hamada_sec-test.S <==
-1
